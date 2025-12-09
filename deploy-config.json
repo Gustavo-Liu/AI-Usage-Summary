@@ -1,8 +1,0 @@
-{
-  "repo_url": "https://github.com/Gustavo-Liu/AI-Usage-Summary",
-  "service_name": "ai-usage-summary",
-  "branch": "main",
-  "port": 8000,
-  "env_vars": {}
-}
-
