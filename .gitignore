@@ -20,7 +20,8 @@ ENV/
 *~
 
 # 数据文件（可选，如果不想提交原始数据）
-# conversation.json
+# conversation.json 文件太大（56MB），建议不提交
+conversation.json
 
 # 分析结果（可选）
 # summary.json
