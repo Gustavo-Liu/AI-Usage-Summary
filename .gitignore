@@ -22,9 +22,8 @@ ENV/
 # 数据文件（不提交 JSON 数据文件）
 conversation.json
 summary.json
-*.json
-!package.json
-!tsconfig.json
+
+# 允许部署配置文件
 !deploy-config.json
 
 # 系统文件
