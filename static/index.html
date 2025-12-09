@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Year-In-Review | 年度回顾</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .chart-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .chart {
+            width: 100%;
+            height: 400px;
+        }
+
+        .heatmap-chart {
+            height: 500px;
+        }
+
+        .keywords-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .keyword-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .chat-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        .chat-button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .chat-button:hover {
+            opacity: 0.9;
+        }
+
+        .chat-response {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 AI Year-In-Review</h1>
+            <p class="subtitle">你的 AI 对话年度回顾报告</p>
+        </header>
+
+        <div id="loading" class="loading">正在加载数据...</div>
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="content" style="display: none;">
+            <!-- 统计卡片 -->
+            <div class="stats-grid" id="statsGrid"></div>
+
+            <!-- 大脑活跃热力图 -->
+            <div class="chart-container">
+                <h2 class="chart-title">🧠 大脑活跃热力图</h2>
+                <div id="heatmapChart" class="chart heatmap-chart"></div>
+            </div>
+
+            <!-- 关键词云 -->
+            <div class="chart-container">
+                <h2 class="chart-title">📚 年度知识图谱</h2>
+                <div id="keywordsCloud" class="keywords-cloud"></div>
+            </div>
+
+            <!-- 思维深潜度 -->
+            <div class="chart-container">
+                <h2 class="chart-title">🌊 思维深潜度分布</h2>
+                <div id="deepDiveChart" class="chart"></div>
+            </div>
+
+            <!-- 语言偏好 -->
+            <div class="chart-container">
+                <h2 class="chart-title">🌍 语言偏好分布</h2>
+                <div id="languageChart" class="chart"></div>
+            </div>
+
+            <!-- 月度专注主题 -->
+            <div class="chart-container">
+                <h2 class="chart-title">📅 月度专注主题</h2>
+                <div id="monthlyChart" class="chart"></div>
+            </div>
+
+            <!-- 用户画像徽章 -->
+            <div class="chart-container">
+                <h2 class="chart-title">🏆 用户画像徽章</h2>
+                <div id="badges" class="badge-container"></div>
+            </div>
+
+            <!-- 聊天功能 -->
+            <div class="chat-section">
+                <h2 class="chart-title">💬 与 AI 对话</h2>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="输入你的问题...">
+                    <button id="chatButton" class="chat-button">发送</button>
+                </div>
+                <div id="chatResponse" class="chat-response" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let summaryData = null;
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('/api/summary');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                summaryData = await response.json();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                renderAll();
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = `加载数据失败: ${error.message}`;
+            }
+        }
+
+        // 渲染统计卡片
+        function renderStats() {
+            const stats = summaryData.summary_stats;
+            const statsGrid = document.getElementById('statsGrid');
+            
+            const statCards = [
+                { value: stats.total_conversations, label: '总对话数' },
+                { value: stats.total_messages.toLocaleString(), label: '总消息数' },
+                { value: (stats.total_user_characters / 10000).toFixed(1) + '万', label: '用户输入字数' },
+                { value: (stats.total_assistant_characters / 10000).toFixed(1) + '万', label: 'AI 回复字数' },
+                { value: stats.books_equivalent['三体'].toFixed(1), label: '相当于《三体》' },
+                { value: stats.most_active_hour.hour + ':00', label: '最活跃时间' }
+            ];
+
+            statsGrid.innerHTML = statCards.map(card => `
+                <div class="stat-card">
+                    <div class="stat-value">${card.value}</div>
+                    <div class="stat-label">${card.label}</div>
+                </div>
+            `).join('');
+        }
+
+        // 渲染热力图
+        function renderHeatmap() {
+            const heatmapData = summaryData.brain_activity_heatmap;
+            const chart = echarts.init(document.getElementById('heatmapChart'));
+
+            // 准备数据：24小时 x 7天
+            const hours = Array.from({ length: 24 }, (_, i) => i);
+            const weekdays = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+            
+            const data = heatmapData.heatmap_data.map(([h, w, count]) => [w, h, count]);
+            const maxCount = Math.max(...data.map(d => d[2]));
+
+            const option = {
+                tooltip: {
+                    position: 'top',
+                    formatter: function(params) {
+                        return `${weekdays[params.data[0]]} ${params.data[1]}:00<br/>${params.data[2]} 次对话`;
+                    }
+                },
+                grid: {
+                    height: '60%',
+                    top: '10%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: weekdays,
+                    splitArea: {
+                        show: true
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: hours.map(h => h + ':00'),
+                    splitArea: {
+                        show: true
+                    }
+                },
+                visualMap: {
+                    min: 0,
+                    max: maxCount,
+                    calculable: true,
+                    orient: 'horizontal',
+                    left: 'center',
+                    bottom: '5%',
+                    inRange: {
+                        color: ['#e0f3ff', '#667eea', '#764ba2']
+                    }
+                },
+                series: [{
+                    name: '对话次数',
+                    type: 'heatmap',
+                    data: data,
+                    label: {
+                        show: false
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+
+            chart.setOption(option);
+        }
+
+        // 渲染关键词云
+        function renderKeywords() {
+            const keywords = summaryData.keywords.top_keywords.slice(0, 30);
+            const keywordsCloud = document.getElementById('keywordsCloud');
+            
+            // 计算最大频率用于调整字体大小
+            const maxFreq = Math.max(...keywords.map(k => k.frequency));
+            
+            keywordsCloud.innerHTML = keywords.map(kw => {
+                const size = Math.max(12, (kw.frequency / maxFreq) * 24);
+                return `<span class="keyword-tag" style="font-size: ${size}px;">${kw.word}</span>`;
+            }).join('');
+        }
+
+        // 渲染思维深潜度
+        function renderDeepDive() {
+            const deepDive = summaryData.deep_dive_index;
+            const chart = echarts.init(document.getElementById('deepDiveChart'));
+
+            const option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left'
+                },
+                series: [{
+                    name: '对话类型',
+                    type: 'pie',
+                    radius: '60%',
+                    data: [
+                        { value: deepDive.distribution.shallow_1_2_turns, name: '浅层对话 (1-2轮)' },
+                        { value: deepDive.distribution.medium_3_9_turns, name: '中层对话 (3-9轮)' },
+                        { value: deepDive.distribution.deep_10plus_turns, name: '深层对话 (10+轮)' }
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+
+            chart.setOption(option);
+        }
+
+        // 渲染语言偏好
+        function renderLanguage() {
+            const lang = summaryData.linguistic_profile;
+            const chart = echarts.init(document.getElementById('languageChart'));
+
+            const option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                series: [{
+                    name: '语言使用',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: true,
+                        formatter: '{b}: {c}%'
+                    },
+                    data: Object.entries(lang.language_display).map(([lang, pct]) => ({
+                        value: pct,
+                        name: lang
+                    }))
+                }]
+            };
+
+            chart.setOption(option);
+        }
+
+        // 渲染月度专注主题
+        function renderMonthly() {
+            const monthly = summaryData.monthly_focus;
+            const chart = echarts.init(document.getElementById('monthlyChart'));
+
+            const option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    data: monthly.map(m => m.month)
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    name: '对话数',
+                    type: 'bar',
+                    data: monthly.map(m => m.conversation_count),
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: '#667eea' },
+                            { offset: 1, color: '#764ba2' }
+                        ])
+                    }
+                }]
+            };
+
+            chart.setOption(option);
+        }
+
+        // 渲染用户画像徽章
+        function renderBadges() {
+            const badges = summaryData.persona_badge.badges;
+            const badgesContainer = document.getElementById('badges');
+            
+            badgesContainer.innerHTML = badges.map(badge => `
+                <div class="badge">${badge.name}</div>
+            `).join('');
+        }
+
+        // 渲染所有内容
+        function renderAll() {
+            renderStats();
+            renderHeatmap();
+            renderKeywords();
+            renderDeepDive();
+            renderLanguage();
+            renderMonthly();
+            renderBadges();
+        }
+
+        // 聊天功能
+        document.getElementById('chatButton').addEventListener('click', async () => {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            const button = document.getElementById('chatButton');
+            const responseDiv = document.getElementById('chatResponse');
+            
+            button.disabled = true;
+            button.textContent = '发送中...';
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = '正在思考...';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ user_message: message })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                responseDiv.textContent = data.content;
+                input.value = '';
+            } catch (error) {
+                responseDiv.textContent = `错误: ${error.message}`;
+            } finally {
+                button.disabled = false;
+                button.textContent = '发送';
+            }
+        });
+
+        // 回车发送
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('chatButton').click();
+            }
+        });
+
+        // 页面加载时获取数据
+        loadData();
+    </script>
+</body>
+</html>
+

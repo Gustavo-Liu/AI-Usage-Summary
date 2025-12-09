@@ -1,0 +1,1011 @@
+{
+  "summary_stats": {
+    "total_conversations": 800,
+    "total_messages": 2333,
+    "total_user_characters": 2624374,
+    "total_assistant_characters": 6368413,
+    "total_hours_span": 7207.1,
+    "most_active_date": {
+      "date": "2025-04-11",
+      "count": 14
+    },
+    "most_active_hour": {
+      "hour": 9,
+      "count": 100
+    },
+    "books_equivalent": {
+      "三体": 31.8,
+      "哈利波特": 63.7,
+      "小王子": 318.4
+    }
+  },
+  "brain_activity_heatmap": {
+    "heatmap_data": [
+      [
+        16,
+        0,
+        18
+      ],
+      [
+        14,
+        0,
+        15
+      ],
+      [
+        11,
+        0,
+        19
+      ],
+      [
+        10,
+        0,
+        26
+      ],
+      [
+        9,
+        0,
+        31
+      ],
+      [
+        1,
+        6,
+        4
+      ],
+      [
+        0,
+        6,
+        6
+      ],
+      [
+        17,
+        5,
+        4
+      ],
+      [
+        16,
+        5,
+        6
+      ],
+      [
+        12,
+        5,
+        2
+      ],
+      [
+        21,
+        4,
+        2
+      ],
+      [
+        16,
+        3,
+        10
+      ],
+      [
+        14,
+        3,
+        16
+      ],
+      [
+        16,
+        2,
+        8
+      ],
+      [
+        8,
+        2,
+        2
+      ],
+      [
+        16,
+        1,
+        15
+      ],
+      [
+        9,
+        1,
+        32
+      ],
+      [
+        8,
+        1,
+        1
+      ],
+      [
+        20,
+        0,
+        4
+      ],
+      [
+        14,
+        6,
+        2
+      ],
+      [
+        16,
+        6,
+        2
+      ],
+      [
+        22,
+        5,
+        3
+      ],
+      [
+        22,
+        4,
+        5
+      ],
+      [
+        20,
+        4,
+        2
+      ],
+      [
+        14,
+        4,
+        16
+      ],
+      [
+        14,
+        2,
+        12
+      ],
+      [
+        23,
+        1,
+        3
+      ],
+      [
+        14,
+        1,
+        21
+      ],
+      [
+        15,
+        0,
+        25
+      ],
+      [
+        13,
+        0,
+        15
+      ],
+      [
+        13,
+        6,
+        4
+      ],
+      [
+        23,
+        5,
+        2
+      ],
+      [
+        20,
+        5,
+        4
+      ],
+      [
+        10,
+        5,
+        3
+      ],
+      [
+        16,
+        4,
+        15
+      ],
+      [
+        15,
+        4,
+        23
+      ],
+      [
+        13,
+        4,
+        15
+      ],
+      [
+        11,
+        4,
+        30
+      ],
+      [
+        10,
+        4,
+        35
+      ],
+      [
+        9,
+        4,
+        33
+      ],
+      [
+        15,
+        3,
+        10
+      ],
+      [
+        10,
+        2,
+        6
+      ],
+      [
+        23,
+        2,
+        2
+      ],
+      [
+        19,
+        2,
+        3
+      ],
+      [
+        15,
+        2,
+        11
+      ],
+      [
+        22,
+        1,
+        4
+      ],
+      [
+        21,
+        1,
+        6
+      ],
+      [
+        23,
+        0,
+        5
+      ],
+      [
+        11,
+        6,
+        2
+      ],
+      [
+        21,
+        5,
+        4
+      ],
+      [
+        13,
+        5,
+        2
+      ],
+      [
+        22,
+        3,
+        2
+      ],
+      [
+        20,
+        3,
+        4
+      ],
+      [
+        10,
+        3,
+        2
+      ],
+      [
+        21,
+        2,
+        6
+      ],
+      [
+        13,
+        2,
+        11
+      ],
+      [
+        13,
+        1,
+        16
+      ],
+      [
+        21,
+        0,
+        2
+      ],
+      [
+        22,
+        6,
+        2
+      ],
+      [
+        21,
+        6,
+        3
+      ],
+      [
+        12,
+        4,
+        5
+      ],
+      [
+        0,
+        4,
+        3
+      ],
+      [
+        12,
+        3,
+        8
+      ],
+      [
+        11,
+        2,
+        4
+      ],
+      [
+        10,
+        1,
+        18
+      ],
+      [
+        22,
+        0,
+        2
+      ],
+      [
+        17,
+        0,
+        1
+      ],
+      [
+        8,
+        0,
+        4
+      ],
+      [
+        23,
+        6,
+        3
+      ],
+      [
+        19,
+        5,
+        4
+      ],
+      [
+        20,
+        1,
+        3
+      ],
+      [
+        12,
+        0,
+        8
+      ],
+      [
+        17,
+        6,
+        7
+      ],
+      [
+        21,
+        3,
+        4
+      ],
+      [
+        9,
+        2,
+        3
+      ],
+      [
+        17,
+        1,
+        3
+      ],
+      [
+        18,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        6,
+        4
+      ],
+      [
+        18,
+        5,
+        3
+      ],
+      [
+        0,
+        5,
+        3
+      ],
+      [
+        19,
+        4,
+        5
+      ],
+      [
+        1,
+        3,
+        1
+      ],
+      [
+        20,
+        2,
+        4
+      ],
+      [
+        11,
+        5,
+        1
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        18,
+        1,
+        2
+      ],
+      [
+        15,
+        1,
+        11
+      ],
+      [
+        9,
+        3,
+        1
+      ],
+      [
+        13,
+        3,
+        11
+      ],
+      [
+        12,
+        2,
+        8
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        14,
+        5,
+        4
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        4,
+        1
+      ],
+      [
+        11,
+        1,
+        10
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        18,
+        6,
+        4
+      ],
+      [
+        15,
+        6,
+        5
+      ],
+      [
+        23,
+        4,
+        2
+      ],
+      [
+        7,
+        3,
+        2
+      ],
+      [
+        18,
+        2,
+        2
+      ],
+      [
+        3,
+        3,
+        1
+      ],
+      [
+        7,
+        4,
+        1
+      ],
+      [
+        12,
+        1,
+        5
+      ],
+      [
+        3,
+        6,
+        1
+      ],
+      [
+        8,
+        3,
+        1
+      ],
+      [
+        11,
+        3,
+        3
+      ],
+      [
+        19,
+        1,
+        1
+      ],
+      [
+        8,
+        4,
+        3
+      ],
+      [
+        17,
+        4,
+        2
+      ],
+      [
+        17,
+        2,
+        1
+      ],
+      [
+        18,
+        3,
+        1
+      ],
+      [
+        19,
+        3,
+        1
+      ],
+      [
+        23,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        2
+      ],
+      [
+        15,
+        5,
+        1
+      ],
+      [
+        2,
+        5,
+        1
+      ],
+      [
+        3,
+        5,
+        2
+      ],
+      [
+        1,
+        5,
+        1
+      ]
+    ],
+    "hour_distribution": {
+      "16": 74,
+      "14": 86,
+      "11": 69,
+      "10": 90,
+      "9": 100,
+      "1": 8,
+      "0": 22,
+      "17": 18,
+      "12": 36,
+      "21": 27,
+      "8": 11,
+      "20": 21,
+      "22": 18,
+      "23": 18,
+      "15": 86,
+      "13": 74,
+      "19": 14,
+      "18": 14,
+      "2": 7,
+      "7": 3,
+      "3": 4
+    },
+    "weekday_distribution": {
+      "周一": 180,
+      "周二": 154,
+      "周三": 88,
+      "周四": 81,
+      "周五": 198,
+      "周六": 50,
+      "周日": 49
+    }
+  },
+  "keywords": {
+    "top_keywords": [
+      {
+        "word": "the",
+        "frequency": 19093,
+        "language": "en"
+      },
+      {
+        "word": "and",
+        "frequency": 7267,
+        "language": "en"
+      },
+      {
+        "word": "for",
+        "frequency": 4112,
+        "language": "en"
+      },
+      {
+        "word": "that",
+        "frequency": 3417,
+        "language": "en"
+      },
+      {
+        "word": "are",
+        "frequency": 2241,
+        "language": "en"
+      },
+      {
+        "word": "none",
+        "frequency": 2215,
+        "language": "en"
+      },
+      {
+        "word": "this",
+        "frequency": 1785,
+        "language": "en"
+      },
+      {
+        "word": "with",
+        "frequency": 1731,
+        "language": "en"
+      },
+      {
+        "word": "not",
+        "frequency": 1698,
+        "language": "en"
+      },
+      {
+        "word": "you",
+        "frequency": 1635,
+        "language": "en"
+      },
+      {
+        "word": "from",
+        "frequency": 1424,
+        "language": "en"
+      },
+      {
+        "word": "can",
+        "frequency": 1336,
+        "language": "en"
+      },
+      {
+        "word": "data",
+        "frequency": 1279,
+        "language": "en"
+      },
+      {
+        "word": "have",
+        "frequency": 1260,
+        "language": "en"
+      },
+      {
+        "word": "what",
+        "frequency": 1219,
+        "language": "en"
+      },
+      {
+        "word": "mean",
+        "frequency": 989,
+        "language": "en"
+      },
+      {
+        "word": "tax",
+        "frequency": 950,
+        "language": "en"
+      },
+      {
+        "word": "will",
+        "frequency": 929,
+        "language": "en"
+      },
+      {
+        "word": "sample",
+        "frequency": 911,
+        "language": "en"
+      },
+      {
+        "word": "example",
+        "frequency": 850,
+        "language": "en"
+      },
+      {
+        "word": "页内容",
+        "frequency": 73,
+        "language": "zh"
+      },
+      {
+        "word": "字数统计",
+        "frequency": 39,
+        "language": "zh"
+      },
+      {
+        "word": "例如",
+        "frequency": 31,
+        "language": "zh"
+      },
+      {
+        "word": "比如",
+        "frequency": 28,
+        "language": "zh"
+      },
+      {
+        "word": "文件",
+        "frequency": 28,
+        "language": "zh"
+      },
+      {
+        "word": "问题",
+        "frequency": 24,
+        "language": "zh"
+      },
+      {
+        "word": "如果我们",
+        "frequency": 23,
+        "language": "zh"
+      },
+      {
+        "word": "我想",
+        "frequency": 19,
+        "language": "zh"
+      },
+      {
+        "word": "帮我看看",
+        "frequency": 17,
+        "language": "zh"
+      },
+      {
+        "word": "同时",
+        "frequency": 16,
+        "language": "zh"
+      }
+    ],
+    "total_unique_keywords": 40
+  },
+  "deep_dive_index": {
+    "total_conversations": 800,
+    "average_turns": 2.9,
+    "distribution": {
+      "shallow_1_2_turns": 506,
+      "medium_3_9_turns": 260,
+      "deep_10plus_turns": 34
+    },
+    "max_turns": 38,
+    "top_deep_conversations": [
+      {
+        "conversation_id": "691dde8d-8864-8329-bd03-3ac5341a6cd2",
+        "title": "Disparity analysis方法",
+        "turns": 38
+      },
+      {
+        "conversation_id": "6899e8ec-758c-8323-8c53-1506504c54ca",
+        "title": "Optimizing EDAC HF Algorithm",
+        "turns": 23
+      },
+      {
+        "conversation_id": "682738da-eaf0-800a-a258-8c533f865fb6",
+        "title": "Website Structure Overview",
+        "turns": 21
+      },
+      {
+        "conversation_id": "691b6aba-b728-832a-b941-f4d53b09f59d",
+        "title": "AUC curve creation explained",
+        "turns": 20
+      },
+      {
+        "conversation_id": "689632d0-1504-8330-8804-1d7235a75ad4",
+        "title": "Optimizing EDAC prediction",
+        "turns": 19
+      }
+    ]
+  },
+  "directors_ratio": {
+    "input_chars": 2624374,
+    "output_chars": 6368413,
+    "ratio": 2.43,
+    "ratio_display": "1:2.43",
+    "persona_type": "创作者",
+    "description": "你提供了大量上下文，更像是在与 AI 协作创作"
+  },
+  "linguistic_profile": {
+    "total_messages_analyzed": 2240,
+    "language_counts": {
+      "en": 1735,
+      "zh": 505
+    },
+    "language_percentages": {
+      "en": 77.5,
+      "zh": 22.5
+    },
+    "primary_language": "en",
+    "language_display": {
+      "英文": 77.5,
+      "中文": 22.5
+    }
+  },
+  "marathon_session": {
+    "title": "Disparity analysis方法",
+    "date": "2025-11-19",
+    "turns": 38,
+    "conversation_id": "691dde8d-8864-8329-bd03-3ac5341a6cd2"
+  },
+  "monthly_focus": [
+    {
+      "month": "2025-02",
+      "top_keywords": [
+        "一个",
+        "在你的理",
+        "解里"
+      ],
+      "conversation_count": 38
+    },
+    {
+      "month": "2025-03",
+      "top_keywords": [
+        "页内容",
+        "字数统计",
+        "我想"
+      ],
+      "conversation_count": 51
+    },
+    {
+      "month": "2025-04",
+      "top_keywords": [
+        "文件",
+        "比如",
+        "如果我们"
+      ],
+      "conversation_count": 119
+    },
+    {
+      "month": "2025-05",
+      "top_keywords": [
+        "帮我搜索",
+        "营地附近",
+        "最好在大"
+      ],
+      "conversation_count": 75
+    },
+    {
+      "month": "2025-06",
+      "top_keywords": [
+        "所以可能",
+        "磅食物需",
+        "我在亚特"
+      ],
+      "conversation_count": 47
+    },
+    {
+      "month": "2025-07",
+      "top_keywords": [
+        "假设",
+        "问题",
+        "换言之"
+      ],
+      "conversation_count": 70
+    },
+    {
+      "month": "2025-08",
+      "top_keywords": [
+        "帮我看看",
+        "办法",
+        "这个世界"
+      ],
+      "conversation_count": 100
+    },
+    {
+      "month": "2025-09",
+      "top_keywords": [
+        "例如",
+        "科技公司",
+        "此外"
+      ],
+      "conversation_count": 72
+    },
+    {
+      "month": "2025-10",
+      "top_keywords": [
+        "下午",
+        "住宿",
+        "上午"
+      ],
+      "conversation_count": 94
+    },
+    {
+      "month": "2025-11",
+      "top_keywords": [
+        "亿美元",
+        "我希望你",
+        "帮我解释"
+      ],
+      "conversation_count": 108
+    },
+    {
+      "month": "2025-12",
+      "top_keywords": [
+        "帮我生成",
+        "还有这个",
+        "一个"
+      ],
+      "conversation_count": 26
+    }
+  ],
+  "politeness_score": {
+    "please_count": 98,
+    "thank_you_count": 105,
+    "help_count": 437,
+    "total_polite_usage": 640,
+    "total_messages": 2333,
+    "politeness_percentage": 27.4,
+    "evaluation": "你比较有礼貌，偶尔会使用礼貌用语"
+  },
+  "persona_badge": {
+    "badges": [
+      {
+        "name": "规律型用户",
+        "description": "你的使用时间比较规律"
+      }
+    ],
+    "late_night_count": 19,
+    "early_morning_count": 3,
+    "weekend_count": 99,
+    "memorable_moment": {
+      "hour": 1,
+      "weekday": "周日",
+      "count": 4
+    }
+  },
+  "metadata": {
+    "generated_at": "2025-12-09T11:00:35.336413",
+    "total_conversations_analyzed": 800,
+    "version": "1.0"
+  }
+}
